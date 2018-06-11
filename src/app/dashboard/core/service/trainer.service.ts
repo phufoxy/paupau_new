@@ -9,12 +9,12 @@ import { Trainer } from '../model/trainer';
 
 @Injectable()
 export class TrainerService {
-    private baseUrl: string = 'http://localhost:8080/api';
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private options = new RequestOptions({ headers: this.headers });
-    private trainer = new Trainer();
+    public baseUrl: string = 'https://nameless-beyond-97489.herokuapp.com/api';
+    public headers = new Headers({ 'Content-Type': 'application/json' });
+    public options = new RequestOptions({ headers: this.headers });
+    public trainer = new Trainer();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getdata
@@ -68,7 +68,7 @@ export class TrainerService {
     setter(trainer: Trainer) {
         this.trainer = trainer;
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
     // get data

@@ -9,12 +9,12 @@ import { Event } from '../model/event';
 
 @Injectable()
 export class EventService {
-    private baseUrl: string = 'http://localhost:8080/api';
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private options = new RequestOptions({ headers: this.headers });
-    private event = new Event();
+    public baseUrl: string = 'https://nameless-beyond-97489.herokuapp.com/api';
+    public headers = new Headers({ 'Content-Type': 'application/json' });
+    public options = new RequestOptions({ headers: this.headers });
+    public event = new Event();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getdata
@@ -61,7 +61,7 @@ export class EventService {
     errorHandler(error: Response) {
         return Observable.throw(error || 'SERVER ERROR');
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
 }

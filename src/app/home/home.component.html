@@ -17,7 +17,7 @@
 		<!-- content courses -->
 		<ul class="clientsList clearfix">
 			<li *ngFor = "let parentcourse of parentcourse" routerLinkActive="active" class="linkTo client all diesel industries big">
-				<img class="client__image" src="http://localhost:8080{{parentcourse.image}}" />
+				<img class="client__image" src="https://nameless-beyond-97489.herokuapp.com{{parentcourse.image}}" />
 				<div class="client__overlay"></div>
 				<a class="linkFrom" [routerLink]="['/course',parentcourse.idCourse]">
 					<div class="client__box text-center">
@@ -30,7 +30,7 @@
 			</li>
 
 			<li *ngFor = "let childcourse of childcourses" routerLinkActive="active" class="linkTo client all cisalfa industries small">
-				<img class="client__image" src="http://localhost:8080{{childcourse.image}}" />
+				<img class="client__image" src="https://nameless-beyond-97489.herokuapp.com{{childcourse.image}}" />
 				<div class="client__overlay"></div>
 				<a class="linkFrom" [routerLink]="['/course',childcourse.idCourse]">
 					<div class="client__box text-center">

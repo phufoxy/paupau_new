@@ -28,7 +28,7 @@ export class SliderComponent implements OnInit {
             data => {
                 // console.log(data);
                 data.forEach(element => {
-                    this.slider.items.push({ src: 'http://localhost:8080' + element.image, title: element.title });
+                    this.slider.items.push({ src: 'https://nameless-beyond-97489.herokuapp.com' + element.image, title: element.title });
                 });
             }
 

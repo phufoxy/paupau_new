@@ -4,9 +4,9 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class HomeService {
 
-    private url: string = 'http://localhost:8080/api/';
+    public url: string = 'https://nameless-beyond-97489.herokuapp.com/api/';
 
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     getCategories() {
         return this.http.get(this.url + 'group')
@@ -34,7 +34,7 @@ export class HomeService {
             .catch(this.handleError);
     }
 
-    private handleError(error: Response) {
+    public handleError(error: Response) {
         return Observable.throw(error.statusText);
     }
 }

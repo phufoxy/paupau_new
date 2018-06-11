@@ -4,9 +4,9 @@ import { Http } from '@angular/http';
 @Injectable()
 export class EventService {
 
-    private url: string = 'http://localhost:8080/api/';
+    public url: string = 'https://nameless-beyond-97489.herokuapp.com/api/';
 
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     getTopEvent() {
         return this.http.get(this.url + 'event/0/1')
@@ -14,7 +14,7 @@ export class EventService {
             .catch(this.handleError);
     }
 
-    private handleError(error: Response) {
+    public handleError(error: Response) {
         return Observable.throw(error.statusText);
     }
 }

@@ -12,9 +12,9 @@ import { DatePipe } from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseComponent implements OnInit {
-    private myDate = new Date();
-    private base64textString: String = '';
-    private course: Course;
+    public myDate = new Date();
+    public base64textString: String = '';
+    public course: Course;
     editorConfig = {
         editable: true,
         spellcheck: false,
@@ -25,7 +25,7 @@ export class CourseComponent implements OnInit {
     };
 
     htmlContent = '';
-    constructor(private courseService: CourseService, private router: Router, public datepipe: DatePipe) { }
+    constructor(public courseService: CourseService, public router: Router, public datepipe: DatePipe) { }
 
     ngOnInit() {
         this.course = this.courseService.getter();

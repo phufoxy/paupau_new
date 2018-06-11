@@ -5,12 +5,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
     public token: string = '';
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private options = new RequestOptions({ headers: this.headers });
-    constructor(private http: Http) {
+    public headers = new Headers({ 'Content-Type': 'application/json' });
+    public options = new RequestOptions({ headers: this.headers });
+    constructor(public http: Http) {
     }
     login(username: string, password: string): Observable<boolean> {
-        return this.http.post('http://localhost:8080/auth', JSON.stringify({ username: username, password: password }), this.options)
+        return this.http.post('https://nameless-beyond-97489.herokuapp.com/auth', JSON.stringify({ username: username, password: password }), this.options)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let token = response.json() && response.json().token;

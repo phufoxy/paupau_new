@@ -9,12 +9,12 @@ import { News } from '../../core/model/news';
 
 @Injectable()
 export class NewsService {
-    private baseUrl: string = 'http://localhost:8080/api';
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private options = new RequestOptions({ headers: this.headers });
-    private news = new News();
+    public baseUrl: string = 'https://nameless-beyond-97489.herokuapp.com/api';
+    public headers = new Headers({ 'Content-Type': 'application/json' });
+    public options = new RequestOptions({ headers: this.headers });
+    public news = new News();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getCount
@@ -69,7 +69,7 @@ export class NewsService {
     errorHandler(error: Response) {
         return Observable.throw(error || 'SERVER ERROR');
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
 

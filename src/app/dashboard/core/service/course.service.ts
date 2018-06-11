@@ -8,12 +8,12 @@ import 'rxjs/add/observable/throw';
 import { Course } from '../../core/model/course';
 @Injectable()
 export class CourseService {
-    private baseUrl: string = 'http://localhost:8080/api';
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private options = new RequestOptions({ headers: this.headers });
-    private course = new Course();
+    public baseUrl: string = 'https://nameless-beyond-97489.herokuapp.com/api';
+    public headers = new Headers({ 'Content-Type': 'application/json' });
+    public options = new RequestOptions({ headers: this.headers });
+    public course = new Course();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getcount
@@ -21,14 +21,14 @@ export class CourseService {
         let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
         let options = new RequestOptions({ headers: headers });
         // getdata
-        return this._http.get('http://localhost:8080/api/course/count', options).map((response: Response) => response.json());
+        return this._http.get('https://nameless-beyond-97489.herokuapp.com/api/course/count', options).map((response: Response) => response.json());
     }
     // getdata
     getCourse() {
         let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
         let options = new RequestOptions({ headers: headers });
         // getdata
-        return this._http.get('http://localhost:8080/api/course', options).map((response: Response) => response.json());
+        return this._http.get('https://nameless-beyond-97489.herokuapp.com/api/course', options).map((response: Response) => response.json());
     }
     // Add data
     createCourse(course: Course) {
@@ -36,7 +36,7 @@ export class CourseService {
         headers.append('Content-Type', 'application/json');
         let options = new RequestOptions({ headers: headers });
         // create
-        return this._http.post('http://localhost:8080/api/course/new', JSON.stringify(course), options).map(this.extractData).catch(this.errorHandler);
+        return this._http.post('https://nameless-beyond-97489.herokuapp.com/api/course/new', JSON.stringify(course), options).map(this.extractData).catch(this.errorHandler);
 
     }
     // update data
@@ -45,7 +45,7 @@ export class CourseService {
         headers.append('Content-Type', 'application/json');
         let options = new RequestOptions({ headers: headers });
         // create
-        return this._http.put('http://localhost:8080/api/course/update', JSON.stringify(course), options).map(this.extractData).catch(this.errorHandler);
+        return this._http.put('https://nameless-beyond-97489.herokuapp.com/api/course/update', JSON.stringify(course), options).map(this.extractData).catch(this.errorHandler);
 
     }
     // delete data
@@ -53,7 +53,7 @@ export class CourseService {
         let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
         let options = new RequestOptions({ headers: headers });
 
-        return this._http.delete('http://localhost:8080/api/course/delete/' + id, options).map(this.extractData).catch(this.errorHandler);
+        return this._http.delete('https://nameless-beyond-97489.herokuapp.com/api/course/delete/' + id, options).map(this.extractData).catch(this.errorHandler);
     }
     // set data
     setter(course: Course) {
@@ -67,7 +67,7 @@ export class CourseService {
     errorHandler(error: Response) {
         return Observable.throw(error || 'SERVER ERROR');
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
 }

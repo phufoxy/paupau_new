@@ -10,15 +10,15 @@ import { TrainerService } from '../../core/service/trainer.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TrainerComponent implements OnInit {
-    private base64textString: String = '';
+    public base64textString: String = '';
 
-    private trainer: Trainer;
+    public trainer: Trainer;
     // tslint:disable-next-line:variable-name
-    private base64textString_update: String = '';
+    public base64textString_update: String = '';
     photos: Object;
     constructor(
-        private router: Router,
-        private trainerService: TrainerService) { }
+        public router: Router,
+        public trainerService: TrainerService) { }
 
     ngOnInit() {
         this.trainer = this.trainerService.getter();

@@ -17,7 +17,7 @@ export class ContactUsComponent implements OnInit {
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
     email = new FormControl('', [Validators.required, Validators.email]);
-    constructor(private _formBuilder: FormBuilder, private router: Router,private contactService:ContactUsService) { }
+    constructor(public _formBuilder: FormBuilder, public router: Router,public contactService:ContactUsService) { }
     err:any;
     ngOnInit() {
         this.firstFormGroup = this._formBuilder.group({
