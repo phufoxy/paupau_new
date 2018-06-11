@@ -34,7 +34,7 @@ export class CourseComponent implements OnInit {
         this.course.idCategory = 1;
         this.course.image = this.base64textString;
         this.course.price = 0;
-        this.course.createAt = this.datepipe.transform(this.myDate, 'yyyy-MM-dd HH:mm:ss');
+        this.course.createAt = this.datepipe.transform(this.myDate, 'yyyy-MM-dd');
         if (this.course.idCourse == undefined) {
             this.courseService.createCourse(this.course).subscribe((course) => {
                 alert('Thêm Thành Công Lớp ' + this.course.name + '?');
