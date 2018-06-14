@@ -81,7 +81,6 @@ export class FeedbackComponent implements OnInit {
     // getdata
     init() {
         this.feedbackService.getFeedback().subscribe((data) => {
-            console.log(data);
             this.feedback = data;
             this.numberOfBooks = this.feedback.length;
             this.limit = 6;
