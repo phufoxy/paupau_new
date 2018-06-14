@@ -10,8 +10,8 @@ import { EventService } from '../core/service/event.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EventDashboardComponent implements OnInit {
-    private event: Event;
-    private base64textString: String = '';
+    public event: Event;
+    public base64textString: String = '';
     editorConfig = {
         editable: true,
         spellcheck: false,
@@ -21,8 +21,8 @@ export class EventDashboardComponent implements OnInit {
         translate: 'no'
     };
     constructor(
-        private router: Router,
-        private eventService: EventService) { }
+        public router: Router,
+        public eventService: EventService) { }
 
     ngOnInit() {
         this.event = this.eventService.getter();

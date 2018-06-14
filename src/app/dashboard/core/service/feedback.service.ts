@@ -13,7 +13,7 @@ export class FeedbackService {
     private options = new RequestOptions({ headers: this.headers });
     private feedback = new Feedback();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getdata
@@ -60,7 +60,7 @@ export class FeedbackService {
     errorHandler(error: Response) {
         return Observable.throw(error || 'SERVER ERROR');
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
 }

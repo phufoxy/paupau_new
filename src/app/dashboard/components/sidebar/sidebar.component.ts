@@ -28,7 +28,7 @@ export class SidebarComponent implements OnInit {
 
     menuItems: any[];
 
-    constructor(private router: Router) { }
+    constructor(public router: Router) { }
 
     ngOnInit() {
         this.menuItems = ROUTES.filter(menuItem => menuItem);

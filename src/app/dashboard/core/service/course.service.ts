@@ -13,7 +13,7 @@ export class CourseService {
     private options = new RequestOptions({ headers: this.headers });
     private course = new Course();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getcount
@@ -67,7 +67,7 @@ export class CourseService {
     errorHandler(error: Response) {
         return Observable.throw(error || 'SERVER ERROR');
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
 }

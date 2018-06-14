@@ -13,7 +13,7 @@ export class TrainerComponent implements OnInit {
     @Input() trainer: any;
     @Output() trainerClicked: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private router: Router,private ref: ChangeDetectorRef) { }
+    constructor(public router: Router,public ref: ChangeDetectorRef) { }
 
     ngOnInit() {
         // setInterval(() => {

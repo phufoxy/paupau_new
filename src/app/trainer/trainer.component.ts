@@ -19,7 +19,7 @@ export const ROUTES = [
 })
 export class TrainerComponent implements OnInit {
     traineritems: any[];
-    constructor(private router: Router, private trainerService: TrainerService, private ref: ChangeDetectorRef) { }
+    constructor(public router: Router, public trainerService: TrainerService, public ref: ChangeDetectorRef) { }
     // goToTrainer(){
     //     this.router.navigateByUrl('/trainer');
     //      location.reload()

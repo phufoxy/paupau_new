@@ -14,7 +14,7 @@ export class NewsService {
     private options = new RequestOptions({ headers: this.headers });
     private news = new News();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getCount
@@ -69,7 +69,7 @@ export class NewsService {
     errorHandler(error: Response) {
         return Observable.throw(error || 'SERVER ERROR');
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
 

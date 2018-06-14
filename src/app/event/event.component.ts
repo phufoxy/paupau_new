@@ -13,7 +13,7 @@ export class EventComponent implements OnInit {
   start: boolean = false;
   stringEvent: string = "The events we manage put us to the the test, broaden our areas of expertise and allow us to grow."
   event:any;
-  constructor(private ref: ChangeDetectorRef,private eventService:EventService) { }
+  constructor(public ref: ChangeDetectorRef,public eventService:EventService) { }
 
   ngOnInit() {
     this.eventService.getTopEvent().subscribe(

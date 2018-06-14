@@ -29,7 +29,7 @@ export class CourseComponent implements OnInit {
 
 
 
-    constructor(private router: Router, private location: Location,private coursez:CourseService,private ref: ChangeDetectorRef) {
+    constructor(public router: Router, public location: Location,public coursez:CourseService,public ref: ChangeDetectorRef) {
 
     }
     ngOnInit(): void {

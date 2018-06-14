@@ -10,7 +10,7 @@ import { NewsService } from '../core/services/news.service';
 })
 export class NewsComponent implements OnInit {
 
-  constructor(private ref: ChangeDetectorRef,private newsService:NewsService) { 
+  constructor(public ref: ChangeDetectorRef,public newsService:NewsService) { 
 
   }
   listNews:any[];

@@ -7,7 +7,7 @@ export class CourseService {
 
     private url: string = 'https://nameless-beyond-97489.herokuapp.com/api/';
 
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     getAllCourse() {
         return this.http.get(this.url + 'course')
@@ -21,7 +21,7 @@ export class CourseService {
     }
 
 
-    private handleError(error: Response) {
+    public handleError(error: Response) {
         return Observable.throw(error.statusText);
     }
 }

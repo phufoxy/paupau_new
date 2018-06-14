@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-    private username: string;
-    private password: string;
-    constructor(private authService: AuthService, private router: Router) { }
+    public username: string;
+    public password: string;
+    constructor(public authService: AuthService, public router: Router) { }
 
     ngOnInit() {
 

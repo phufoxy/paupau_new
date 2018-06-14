@@ -9,7 +9,7 @@ import { CourseService } from '../../core/service/course.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseDetailComponent implements OnInit {
-    private course: Course[];
+    public course: Course[];
     limit: number;
     numberOfBooks: number;
     page: number = 1;
@@ -17,7 +17,7 @@ export class CourseDetailComponent implements OnInit {
     pagesIndex = [];
     maxpage: number = 0;
     max: number = 0;
-    constructor(private courseService: CourseService, private _router: Router, private ref: ChangeDetectorRef) { }
+    constructor(public courseService: CourseService, public _router: Router, public ref: ChangeDetectorRef) { }
 
     ngOnInit() {
         this.init();

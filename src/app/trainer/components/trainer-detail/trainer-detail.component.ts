@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrainerDetailComponent implements OnInit {
 
-    constructor(private activatedRoute: ActivatedRoute) {
+    constructor(public activatedRoute: ActivatedRoute) {
         let params: any = this.activatedRoute.snapshot.params;
         // console.log('trainer id: ', params.id);
     }

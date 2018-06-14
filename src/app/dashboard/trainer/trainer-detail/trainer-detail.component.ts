@@ -10,7 +10,7 @@ import { TrainerService } from '../../core/service/trainer.service';
 })
 export class TrainerDetailComponent implements OnInit {
 
-    private trainer: Trainer[];
+    public trainer: Trainer[];
     limit: number;
     numberOfBooks: number;
     page: number = 1;
@@ -18,7 +18,7 @@ export class TrainerDetailComponent implements OnInit {
     pagesIndex = [];
     maxpage: number = 0;
     max: number = 0;
-    constructor(private trainerService: TrainerService, private _router: Router, private ref: ChangeDetectorRef) { }
+    constructor(public trainerService: TrainerService, public _router: Router, public ref: ChangeDetectorRef) { }
 
     ngOnInit() {
         this.init();
