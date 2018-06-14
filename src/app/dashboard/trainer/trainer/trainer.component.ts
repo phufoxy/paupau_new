@@ -22,7 +22,6 @@ export class TrainerComponent implements OnInit {
 
     ngOnInit() {
         this.trainer = this.trainerService.getter();
-        console.log(this.trainer.image);
     }
 
     processForm() {
