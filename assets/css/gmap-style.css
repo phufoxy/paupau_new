@@ -1,0 +1,20 @@
+#gmap_jquery{
+	min-height: 450px;
+	margin-bottom: 30px;
+	width: 100%;
+}
+@media (min-width:769px) and (max-width:992px) {
+	#gmap_jquery{
+		min-height: 400px
+	}
+}
+@media (min-width:568px) and (max-width:768px) {
+	#gmap_jquery{
+		min-height: 370px
+	}
+}
+@media (max-width: 567px){
+	#gmap_jquery{
+		min-height: 300px
+	}
+}

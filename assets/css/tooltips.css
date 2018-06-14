@@ -1,0 +1,12 @@
+.spacing {
+	padding: 10px;
+}
+
+.background-cate{
+	background-color: #099d6e;
+	color: white;
+	padding: 5px;
+	font-weight: 700;
+	font-size: 1.8rem;
+	line-height: .8em;
+}
