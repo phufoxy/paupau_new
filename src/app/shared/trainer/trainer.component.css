@@ -2,17 +2,4 @@
 	background-color: #ffffff;
 }
 
-@media (max-width:1199.98px){
-.service{
-  width: 100%;
-  height: 312px;
-}
-}
-
-@media (max-width:800.98px){
-  .service{
-    width: 100%;
-    height: 312px;
-  }
-  }
 
