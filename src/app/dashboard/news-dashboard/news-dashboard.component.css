@@ -1,3 +1,8 @@
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .wrapper{
+    height: 0px;
+  }
+}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -265,10 +270,10 @@ margin-top: 10px;
   }
 }
 @media (max-width:1199.98px){
+
   .sidebar-fixed{
       display:none;
       float: left;
-
       height: 3000px;
       position: absolute;
       z-index: 99999;
