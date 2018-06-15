@@ -43,7 +43,7 @@ export class EventDashboardComponent implements OnInit {
     _handleReaderLoaded(readerEvt) {
         const binaryString = readerEvt.target.result;
         this.base64textString = btoa(binaryString);
-        console.log(this.base64textString);
+        // console.log(this.base64textString);
     }
     // create data
     processForm() {

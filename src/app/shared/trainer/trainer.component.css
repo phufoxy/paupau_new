@@ -15,9 +15,4 @@
     height: 312px;
   }
   }
-  @media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)and ( width: 1440px)and (orientation: portrait){
-    /*Your styles here */
-    .service{
-      display: none;
-    }
-    }
+
