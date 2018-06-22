@@ -1688,11 +1688,11 @@ font-family: "Industry Book",sans-serif;
 html{
     min-height:100%!important;
     overflow-x:hidden;
-    font-family: "Industry Book",sans-serif;
+    font-family: "Roboto", sans-serif;
     /*font-family: "Industry Book",sans-serif;*/
 }
 .button,.homeSection__sub,.homeSection__title,body,p{
-    font-family: "Industry Book",sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 body{
     overflow:hidden;
