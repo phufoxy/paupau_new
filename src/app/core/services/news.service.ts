@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 export class NewsService {
     private url: string = 'https://nameless-beyond-97489.herokuapp.com/api/';
 
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     getTopNews() {
         return this.http.get(this.url + 'news/0/10')
@@ -15,7 +15,7 @@ export class NewsService {
     }
 
 
-    private handleError(error: Response) {
+    public handleError(error: Response) {
         return Observable.throw(error.statusText);
     }
 }

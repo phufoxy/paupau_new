@@ -7,7 +7,7 @@ export class ContactUsService {
     private url: string = 'https://nameless-beyond-97489.herokuapp.com/api/';
     headers = new Headers({ 'Content-Type': 'application/json' });
 
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     postContact(data: any) {
         let options = new RequestOptions({ headers: this.headers });
@@ -16,7 +16,7 @@ export class ContactUsService {
             .catch(this.handleError);
     }
 
-    private handleError(error: Response) {
+    public handleError(error: Response) {
         return Observable.throw(error.statusText);
     }
 }

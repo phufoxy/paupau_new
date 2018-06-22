@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { ROUTES } from './trainers-data';
-declare var $:any;
+declare var $: any;
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class TrainerComponent implements OnInit {
     @Input() trainer: any;
     @Output() trainerClicked: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private router: Router,private ref: ChangeDetectorRef) { }
+    constructor(public router: Router, public ref: ChangeDetectorRef) { }
 
     ngOnInit() {
         // setInterval(() => {
@@ -24,6 +24,6 @@ export class TrainerComponent implements OnInit {
     onTrainerClicked($event, trainerId) {
         this.trainerClicked.emit(trainerId);
         // console.log('trainer id: ', trainerId);
-        
+
     }
 }

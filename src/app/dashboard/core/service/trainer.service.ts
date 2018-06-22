@@ -14,7 +14,7 @@ export class TrainerService {
     private options = new RequestOptions({ headers: this.headers });
     private trainer = new Trainer();
     public token: string;
-    constructor(private _http: Http) {
+    constructor(public _http: Http) {
         this.token = localStorage.getItem('token');
     }
     // getdata
@@ -68,7 +68,7 @@ export class TrainerService {
     setter(trainer: Trainer) {
         this.trainer = trainer;
     }
-    private extractData(res: Response) {
+    public extractData(res: Response) {
         return res.text() ? res.json() : {};
     }
     // get data

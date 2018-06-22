@@ -5,6 +5,8 @@ import { EventService } from '../core/service/event.service';
 import { TrainerService } from '../core/service/trainer.service';
 import { CourseService } from '../core/service/course.service';
 import { NewsService } from '../core/service/news.service';
+import { Location } from '@angular/common';
+
 @Component({
     selector: 'home-dashboard',
     templateUrl: './home-dashboard.component.html',
@@ -18,7 +20,7 @@ export class HomeDashboardComponent implements OnInit {
         { name: 'jobf2', city: 'sadsd' },
     ];
     public event: Event[];
-    private events: Event;
+    public events: Event;
     countTrainer: String;
     countCourse: String;
     coutNews: String;
@@ -30,16 +32,21 @@ export class HomeDashboardComponent implements OnInit {
     pagesIndex = [];
     maxpage: number = 0;
     max: number = 0;
-    constructor(public eventService: EventService, public _router: Router,
-        private ref: ChangeDetectorRef,
-        private newsService: NewsService
-        , private courseService: CourseService, private trainerService: TrainerService) { }
+    constructor(public eventService: EventService, public _router: Router,    public location: Location,
+        public ref: ChangeDetectorRef,
+        public newsService: NewsService
+        , public courseService: CourseService, public trainerService: TrainerService) { }
     ngOnInit() {
+
         this.init();
         this.getCount();
         setInterval(() => {
             this.ref.markForCheck();
         }, 100);
+    }
+    // load
+    load() {
+        location.reload();
     }
     // getcount
     getCount() {
@@ -110,6 +117,19 @@ export class HomeDashboardComponent implements OnInit {
             // some code
             console.log('end');
         }
+
+    }
+     // prevpage
+     prevPage() {
+        this.page--;
+    }
+    // nextpage
+    nextPage() {
+        this.page++;
+    }
+    // set page
+    setPage(pagenumber: number) {
+        this.page = pagenumber;
 
     }
 }

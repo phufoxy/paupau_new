@@ -90,7 +90,7 @@
          <!-- </a> -->
          <div class="homeMktg__services">
             <owl-carousel #owlElement [options]="{items: 3, dots: false, navigation: true, autoplayTimeout:2000,navText:['<', '>'], autoplay: true, loop: true}" [items]="traineritems" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-               <main-trainer *ngFor="let trainers of traineritems" [trainer]="trainers" (trainerClicked)="onTrainerClicked($event)">
+               <main-trainer  *ngFor="let trainers of traineritems" [trainer]="trainers" (trainerClicked)="onTrainerClicked($event)">
                </main-trainer>
             </owl-carousel>
             <!-- <div class="owl-carousel owl-theme">

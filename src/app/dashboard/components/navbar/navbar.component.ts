@@ -10,12 +10,12 @@ import {Router}  from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-    private listTitles: any[];
+    public listTitles: any[];
     location: Location;
-    private toggleButton: any;
-    private sidebarVisible: boolean;
+    public toggleButton: any;
+    public sidebarVisible: boolean;
 
-    constructor(location: Location, private element: ElementRef, private router: Router) {
+    constructor(location: Location, public element: ElementRef, public router: Router) {
       this.location = location;
         this.sidebarVisible = false;
     }

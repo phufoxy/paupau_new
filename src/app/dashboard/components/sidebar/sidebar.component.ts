@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -28,16 +30,22 @@ export class SidebarComponent implements OnInit {
 
     menuItems: any[];
 
-    constructor(private router: Router) { }
+    constructor(public router: Router, public location: Location) { }
 
     ngOnInit() {
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
     isMobileMenu() {
         if ($(window).width() > 991) {
+
             return false;
         }
+
         return true;
+    }
+    // load
+    load() {
+        location.reload();
     }
     logout() {
         localStorage.removeItem('token');

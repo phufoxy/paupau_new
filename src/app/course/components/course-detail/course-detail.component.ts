@@ -30,7 +30,7 @@ export class CourseDetailComponent implements OnInit {
     stringSologan1: string="COURSE DETAIL";
     stringSologan2: string="Lorem Ipsum is simply dummy text of the printing and typesetting industry. ";
 
-    constructor(private activatedRoute:ActivatedRoute,private courseService:CourseService,private ref: ChangeDetectorRef) {
+    constructor(public activatedRoute:ActivatedRoute,public courseService:CourseService,public ref: ChangeDetectorRef) {
         
     }
 

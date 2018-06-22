@@ -4,8 +4,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .wrapper{
+    height: 0px;
+  }
+}
+
 .wrapper{
   height: auto;
+}
+@media (min-width:1200px){
+  .wrapper{
+    height: auto;
+  }
 }
 html {
   font-family: sans-serif;
@@ -13,6 +24,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+  padding: 0;
   margin: 0;
 }
 article,
@@ -1299,6 +1311,9 @@ p {
   line-height: 1.4;
 }
 @media (min-width: 768px) {
+  .wrapper{
+    height: 1000px;
+  }
   .lead {
     font-size: 21px;
   }
@@ -1591,16 +1606,25 @@ pre code {
   margin-left: auto;
 }
 @media (min-width: 768px) {
+  .wrapper{
+    height: 1000px;
+  }
   .container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
+  .wrapper{
+    height: 1000px;
+  }
   .container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
+  .wrapper{
+    height: 1000px;
+  }
   .container {
     width: 1170px;
   }
@@ -1778,6 +1802,9 @@ pre code {
   margin-left: 0;
 }
 @media (min-width: 768px) {
+  .wrapper{
+    height: 1000px;
+  }
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
@@ -1936,6 +1963,9 @@ pre code {
   }
 }
 @media (min-width: 992px) {
+  .wrapper{
+    height: 1000px;
+  }
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
@@ -2094,6 +2124,9 @@ pre code {
   }
 }
 @media (min-width: 1200px) {
+  .wrapper{
+    height: 1000px;
+  }
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
@@ -2447,6 +2480,9 @@ table th[class*="col-"] {
   overflow-x: auto;
 }
 @media screen and (max-width: 767px) {
+  .wrapper{
+    height: 1000px;
+  }
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
@@ -2604,27 +2640,30 @@ input[type="search"] {
   -webkit-appearance: none;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="date"].form-control,
+  .wrapper{
+    height: auto;
+  }
+  input[type="datetime"].form-control,
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
   input[type="month"].form-control {
     line-height: 34px;
   }
-  input[type="date"].input-sm,
+  input[type="datetime"].input-sm,
   input[type="time"].input-sm,
   input[type="datetime-local"].input-sm,
   input[type="month"].input-sm,
-  .input-group-sm input[type="date"],
+  .input-group-sm input[type="datetime"],
   .input-group-sm input[type="time"],
   .input-group-sm input[type="datetime-local"],
   .input-group-sm input[type="month"] {
     line-height: 30px;
   }
-  input[type="date"].input-lg,
+  input[type="datetime"].input-lg,
   input[type="time"].input-lg,
   input[type="datetime-local"].input-lg,
   input[type="month"].input-lg,
-  .input-group-lg input[type="date"],
+  .input-group-lg input[type="datetime"],
   .input-group-lg input[type="time"],
   .input-group-lg input[type="datetime-local"],
   .input-group-lg input[type="month"] {
